@@ -1,0 +1,40 @@
+{
+  "name": "react-text-swap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "pretty": "npx prettier --write .",
+    "lint": "eslint . --fix"
+  },
+  "author": "Jessica Peck <jessypeck@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-runtime": "^6.26.0",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-react": "^7.23.2",
+    "prettier": "2.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.45.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "styled-components": "^5.2.3",
+    "typescript": "^4.2.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
