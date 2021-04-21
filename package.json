@@ -10,6 +10,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rollup -c",
+    "build-local": "rollup -c && ./scripts/install-bundle.sh",
     "watch": "rollup -cw",
     "pretty": "npx prettier --write .",
     "lint": "eslint . --fix"
