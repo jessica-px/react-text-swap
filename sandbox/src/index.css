@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 
 body {
   padding-top: 90px;
@@ -46,7 +46,6 @@ h2 {
   text-align: left;
 }
 
-
 .center-align {
   text-align: center;
 }
@@ -68,7 +67,7 @@ h2 {
 
 .display-font {
   display: inline-block;
-  font-family: 'Caveat', serif;
+  font-family: "Caveat", serif;
   color: rgb(239, 59, 125);
   font-size: 28px;
 }
