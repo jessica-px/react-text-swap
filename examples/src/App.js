@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import TextSwap from "react-text-swap";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
