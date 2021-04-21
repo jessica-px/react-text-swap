@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "Updating ./sandbox/node_modules/react-text-swap"
+echo "Updating ./examples/node_modules/react-text-swap"
 
 # remove package folder and contents
-rm -rf ./sandbox/node_modules/react-text-swap
+rm -rf ./examples/node_modules/react-text-swap
 
 # create new empty package folder
-mkdir -p ./sandbox/node_modules/react-text-swap
+mkdir -p ./examples/node_modules/react-text-swap
 
 # copy contents of ./dist to new package folder
-cp ./dist/* ./sandbox/node_modules/react-text-swap
+cp ./dist/* ./examples/node_modules/react-text-swap
