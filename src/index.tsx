@@ -60,23 +60,23 @@ const TextSwap = ({
 
   if (fixedWidthInPx) {
     return (
-      <div
+      <span
         style={{
           display: "inline-block",
           width: `${fixedWidthInPx}px`,
           textAlign: fixedAlign,
         }}
       >
-        <div key={currString} style={animationStyle}>
+        <span key={currString} style={animationStyle}>
           {currString}
-        </div>
-      </div>
+        </span>
+      </span>
     );
   } else {
     return (
-      <div key={currString} style={animationStyle}>
+      <span key={currString} style={animationStyle}>
         {currString}
-      </div>
+      </span>
     );
   }
 };
