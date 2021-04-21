@@ -27,6 +27,7 @@ type TextSwapProps = {
   seconds?: number;
   animationType?: AnimationType;
   fixedWidthInPx?: number;
+  fixedAlign?: "left" | "right" | "center";
 };
 
 // ------------------------
@@ -38,6 +39,7 @@ const TextSwap = ({
   seconds = 2,
   animationType = "fade",
   fixedWidthInPx,
+  fixedAlign = "center",
 }: TextSwapProps) => {
   const defaultStyle = buildAnimationStyle(animationType, seconds);
   const [currString, setCurrString] = useState(strings[0]);
@@ -62,7 +64,7 @@ const TextSwap = ({
         style={{
           display: "inline-block",
           width: `${fixedWidthInPx}px`,
-          textAlign: "center",
+          textAlign: fixedAlign,
         }}
       >
         <div key={currString} style={animationStyle}>
