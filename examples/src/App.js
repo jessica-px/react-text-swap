@@ -263,7 +263,7 @@ const example6String = `<h2>
 </h2>`;
 
 // ------------------------
-//         Helpers
+//      Sub-Components
 // ------------------------
 
 const Syntax = ({ children }) => (
@@ -280,10 +280,6 @@ const Example = ({ component, codeString }) => (
     <Syntax>{codeString}</Syntax>
   </div>
 );
-
-// ------------------------
-//       Sub-Components
-// ------------------------
 
 const Header = () => (
   <React.Fragment>
