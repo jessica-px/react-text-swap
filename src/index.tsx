@@ -27,6 +27,7 @@ type TextSwapProps = {
   interval?: number;
   animationType?: AnimationType;
   animationDuration?: string;
+  fixedWidthInPx?: number;
 };
 
 // ------------------------
@@ -38,6 +39,7 @@ const TextSwap = ({
   interval = 2000,
   animationType = "fade",
   animationDuration = "2s",
+  fixedWidthInPx,
 }: TextSwapProps) => {
   const defaultStyle = buildAnimationStyle(animationType, animationDuration);
   const [currString, setCurrString] = useState(strings[0]);
@@ -57,11 +59,27 @@ const TextSwap = ({
     };
   }, [currString, strings, interval, animationStyle]);
 
-  return (
-    <div key={currString} style={animationStyle}>
-      {currString}
-    </div>
-  );
+  if (fixedWidthInPx) {
+    return (
+      <div
+        style={{
+          display: "inline-block",
+          width: `${fixedWidthInPx}px`,
+          textAlign: "center",
+        }}
+      >
+        <div key={currString} style={animationStyle}>
+          {currString}
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div key={currString} style={animationStyle}>
+        {currString}
+      </div>
+    );
+  }
 };
 
 export default TextSwap;
