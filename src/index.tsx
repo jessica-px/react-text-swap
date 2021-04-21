@@ -8,11 +8,11 @@ import "./styles.scss";
 
 const buildAnimationStyle = (
   type: AnimationType,
-  duration: string
+  duration: number
 ): React.CSSProperties => {
   return {
     display: "inline-block",
-    animation: `${type} ${duration}`,
+    animation: `${type} ${duration}s`,
   };
 };
 
@@ -24,9 +24,8 @@ type AnimationType = "fade" | "slideDown" | "slideUp" | "squish" | "blur";
 
 type TextSwapProps = {
   strings: string[];
-  interval?: number;
+  seconds?: number;
   animationType?: AnimationType;
-  animationDuration?: string;
   fixedWidthInPx?: number;
 };
 
@@ -36,28 +35,26 @@ type TextSwapProps = {
 
 const TextSwap = ({
   strings,
-  interval = 2000,
+  seconds = 2,
   animationType = "fade",
-  animationDuration = "2s",
   fixedWidthInPx,
 }: TextSwapProps) => {
-  const defaultStyle = buildAnimationStyle(animationType, animationDuration);
+  const defaultStyle = buildAnimationStyle(animationType, seconds);
   const [currString, setCurrString] = useState(strings[0]);
   const [animationStyle, setAnimationStyle] = useState(defaultStyle);
-
   useEffect(() => {
     const timer = setInterval(() => {
       const currIndex: number = strings.indexOf(currString);
       const nextIndex: number =
         currIndex < strings.length - 1 ? currIndex + 1 : 0;
       setCurrString(strings[nextIndex]);
-    }, interval);
+    }, seconds * 1000);
     return () => {
       setAnimationStyle({});
       clearInterval(timer);
       setAnimationStyle(animationStyle);
     };
-  }, [currString, strings, interval, animationStyle]);
+  }, [currString, strings, animationStyle]);
 
   if (fixedWidthInPx) {
     return (
