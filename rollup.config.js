@@ -1,5 +1,6 @@
 import typescript from "rollup-plugin-typescript2";
 import pkg from "./package.json";
+import sass from "rollup-plugin-sass";
 
 export default {
   input: "src/index.tsx",
@@ -14,5 +15,8 @@ export default {
     },
   ],
   external: ["react", "react-dom"],
-  plugins: [typescript({ objectHashIgnoreUnknownHack: true })],
+  plugins: [
+    typescript(),
+    sass({ insert: true }),
+  ],
 };
