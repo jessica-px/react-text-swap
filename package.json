@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "repository": "github:jessica-px/react-text-swap",
   "files": [
     "dist"
   ],
