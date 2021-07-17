@@ -286,7 +286,7 @@ const Header = () => (
   <React.Fragment>
     <h1>react-text-swap</h1>
     <h2>
-      an animation library for swapping{" "}
+      a react component for swapping{" "}
       <span className="header-text-swap">
         <TextSwap strings={["text", "words", "strings"]} fixedWidthInPx={38} />
       </span>
