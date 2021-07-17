@@ -1,0 +1,44 @@
+name: Deploy Pages
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  deploy:
+    name: Deploy Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Checkout GitHub Pages branch
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git checkout -B gh-pages
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build-local
+          cd examples
+          npm install
+          npm run build
+
+      - name: Push to GitHub Pages branch
+        run: |
+          # The --force is necessary because build dir is normally
+          # .gitignore'd
+          git add --force build
+          git commit -m "Build example site (auto-generated commit)"
+          git push origin gh-pages --force
