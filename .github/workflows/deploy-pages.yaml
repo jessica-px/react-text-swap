@@ -35,6 +35,6 @@ jobs:
 
       - name: Push to GitHub Pages branch
         run: |
-          git add docs
+          git add docs --force
           git commit -m "Build example site (auto-generated commit)"
           git push origin gh-pages --force
