@@ -2,6 +2,8 @@
 
 A lightweight React component for text swapping animations. No dependencies aside from `react@^17.0.2` and `react-dom@^17.0.2` (as peer dependencies -- if your project already uses React, this won't re-install it). Animations are CSS-based.
 
+![AnimatedTextSwapGift](./src/swap-gif.gif)
+
 **[View Live Examples Here](https://jessica-px.github.io/react-text-swap/)**
 
 ## Installation
