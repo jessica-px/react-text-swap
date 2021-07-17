@@ -2,6 +2,7 @@ import React from "react";
 import TextSwap from "react-text-swap";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { xonokai } from "react-syntax-highlighter/dist/esm/styles/prism";
+import githubIcon from './github-icon.svg';
 
 // ------------------------
 //         Examples
@@ -293,8 +294,8 @@ const Header = () => (
     <SyntaxHighlighter language="bash" style={xonokai}>
       {"npm install react-text-swap"}
     </SyntaxHighlighter>
-    <a className="button" href="GITHUB_LINK">
-      GitHub
+    <a className="button" href="https://github.com/jessica-px/react-text-swap">
+      <img src={githubIcon} alt="Github Icon"/> GitHub
     </a>
   </React.Fragment>
 );
