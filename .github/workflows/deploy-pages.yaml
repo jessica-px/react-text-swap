@@ -36,7 +36,7 @@ jobs:
       - name: Make ./docs dir and copy ./examples/build there
         run: |
           mkdir docs
-          cp -r ./examples/build ./docs
+          cp -r ./examples/build/* ./docs
 
       - name: Push to GitHub Pages branch
         run: |
