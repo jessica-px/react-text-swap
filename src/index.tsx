@@ -45,7 +45,7 @@ const TextSwap = ({
   const [currString, setCurrString] = useState(strings[0]);
   const [animationStyle, setAnimationStyle] = useState(defaultStyle);
   useEffect(() => {
-    const timer = setInterval(() => {
+    const timeout = setTimeout(() => {
       const currIndex: number = strings.indexOf(currString);
       const nextIndex: number =
         currIndex < strings.length - 1 ? currIndex + 1 : 0;
@@ -53,10 +53,10 @@ const TextSwap = ({
     }, seconds * 1000);
     return () => {
       setAnimationStyle({});
-      clearInterval(timer);
       setAnimationStyle(animationStyle);
+      clearTimeout(timeout)
     };
-  }, [currString, strings, animationStyle]);
+  }, [currString, strings]);
 
   if (fixedWidthInPx) {
     return (
