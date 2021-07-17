@@ -29,8 +29,6 @@ jobs:
 
       - name: Install dependencies and build
         run: |
-          npm install
-          npm run build-local
           cd examples
           npm install
           npm run build
@@ -39,6 +37,7 @@ jobs:
         run: |
           # The --force is necessary because build dir is normally
           # .gitignore'd
+          cd examples
           git add --force build
           git commit -m "Build example site (auto-generated commit)"
           git push origin gh-pages --force
